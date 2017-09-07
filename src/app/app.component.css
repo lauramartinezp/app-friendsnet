@@ -1,0 +1,17 @@
+
+
+.out {
+    background-color: #EB2525;
+    display: inline;
+}
+
+.caja {
+    background-color: rgb(195, 232, 234);
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border: 1px solid black;
+    float: left;
+    box-shadow: 2px 2px 5px #999;
+}
