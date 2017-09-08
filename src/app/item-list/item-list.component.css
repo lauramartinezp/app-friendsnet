@@ -28,7 +28,25 @@ img {
 }
 
 li.selected {
-
     background-color: rgb(234, 195, 226);
+}
 
+.input::-webkit-inner-spin-button, .input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+:disabled{
+    background-color: white;
+}
+
+.amount{
+    text-align: center;  
+}
+
+.buscar{
+    padding: auto;
+
+}
+button:disabled{
+    visibility: hidden;
 }

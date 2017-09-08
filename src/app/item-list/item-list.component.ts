@@ -24,17 +24,37 @@ export class ItemListComponent implements OnInit {
     }
     return total;
   }
+    /**totalItems(){return this.myItem.reduce(function(prev, current) {return prev + current.stock;},0)}*/
+  /**totalItems(){return this.myItem.reduce((prev, current) => prev + current.stock, 0)} */
   isSelected(id) {
     this.myItem.forEach(element => {
       if (element.id === id) {
         element.selected = true;
-      }
-      else {
+      } else {
         element.selected = false;
       }
     });
   }
-  /**totalItems(){return this.myItem.reduce(function(prev, current) {return prev + current.stock;},0)}*/
-  /**totalItems(){return this.myItem.reduce((prev, current) => prev + current.stock, 0)} */
+  addQuantity(item: Item) {
+    if (item.stock > 0 ) {
+      item.quantity++;
+      item.stock--;
+    }
 
+    console.log(item.quantity);
+  }
+
+  downQuantity(item: Item) {
+
+    if (item.quantity > 0) {
+      item.quantity--;
+      item.stock++;
+    }
+
+    console.log(item.quantity);
+
+  }
+  showKey(event) {
+
+  }
 }

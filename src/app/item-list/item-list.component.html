@@ -1,6 +1,7 @@
 <div class="left" style="text-align:left">
   <p>There are {{totalItems()}} total flowers in stock.</p>
   <h2>Tipos de flores</h2>
+  <input type="search" ng-model="busqueda" placeholder="Buscar">
 
 <ul>
   <li *ngFor="let item of myItem"  [class.selected]="item.selected" (click)="isSelected(item.id)">
@@ -8,6 +9,11 @@
     <h2>{{item.name|uppercase}}</h2>
     <p>{{item.description}}</p>
     <p>Price: {{item.price|currency:'EUR' :true}}</p>
+    <div class="panel-amount">
+      <button [disabled]="item.quantity == 0" class="btn-amount" (click)="downQuantity(item)">-</button>
+      <input type="number" (keydown)="showKey($event)" maxlength="2" placeholder="0" class="amount" [(ngModel)]="item.quantity" disabled="amount"/>
+      <button [disabled]="item.stock == 0" class="btn-amount" (click)="addQuantity(item)">+</button>
+    </div>
     <p *ngIf="item.stock > 0">{{item.stock}} in Stock</p>
     <p *ngIf="item.stock === 0" class="out">Out of Stock</p>
   

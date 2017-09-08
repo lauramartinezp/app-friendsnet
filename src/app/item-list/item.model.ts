@@ -6,4 +6,5 @@ export class Item {
     price: number;
     image: string;
     selected: boolean;
+    quantity: number;
 }
