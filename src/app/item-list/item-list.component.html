@@ -1,0 +1,17 @@
+<div class="left" style="text-align:left">
+  <p>There are {{totalItems()}} total flowers in stock.</p>
+  <h2>Tipos de flores</h2>
+
+<ul>
+  <li *ngFor="let item of myItem"  [class.selected]="item.selected" (click)="isSelected(item.id)">
+    <img [src] = "item.image"/>
+    <h2>{{item.name|uppercase}}</h2>
+    <p>{{item.description}}</p>
+    <p>Price: {{item.price|currency:'EUR' :true}}</p>
+    <p *ngIf="item.stock > 0">{{item.stock}} in Stock</p>
+    <p *ngIf="item.stock === 0" class="out">Out of Stock</p>
+  
+
+  </li>
+</ul>
+</div>

@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-    background-image: url("app/flor.jpg");
+    background-image: url("assets/flor.jpg");
     background-size: cover;
     height: 400px;
     width: 90%;
