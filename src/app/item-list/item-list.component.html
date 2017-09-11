@@ -1,10 +1,10 @@
 <div class="left" style="text-align:left">
   <p>There are {{totalItems()}} total flowers in stock.</p>
   <h2>Tipos de flores</h2>
-  <input type="search" ng-model="busqueda" placeholder="Buscar">
+  <input type="text" [(ngModel)]="busqueda" placeholder="Buscar">
 
 <ul>
-  <li *ngFor="let item of myItem"  [class.selected]="item.selected" (click)="isSelected(item.id)">
+  <li *ngFor="let item of myItem | search:'name':busqueda" [class.selected]="item.selected" (click)="isSelected(item.id)">
     <img [src] = "item.image"/>
     <h2>{{item.name|uppercase}}</h2>
     <p>{{item.description}}</p>

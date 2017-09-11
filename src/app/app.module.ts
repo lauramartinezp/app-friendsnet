@@ -4,17 +4,22 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ItemListComponent } from './item-list/item-list.component';
+import { SearchPipe } from './search.pipe';
+import { ItemListService } from './item-list/item-list.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemListComponent
+    ItemListComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [ItemListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

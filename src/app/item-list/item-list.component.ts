@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from './item.model';
 import { ITEMS } from './mocks';
+import { ItemListService } from './item-list.service';
 
 @Component({
   selector: 'app-item-list',
@@ -8,24 +9,31 @@ import { ITEMS } from './mocks';
   styleUrls: ['./item-list.component.css']
 })
 export class ItemListComponent implements OnInit {
+  http: any;
 
   myItem: Item[];
+  busqueda: string;
 
-  constructor() { }
+  constructor(private itemListService: ItemListService) { }
 
   ngOnInit() {
-    this.myItem = ITEMS;
+    this.itemListService.getItemList().subscribe(myItem => this.myItem = myItem);
+    // this.myItem = ITEMS;
   }
 
-  totalItems() {
+ /** totalItems() {
     let total = 0;
+    // tslint:disable-next-line:prefer-const
     for (let cada of this.myItem) {
       total = cada.stock + total;
     }
     return total;
-  }
+  }*/
     /**totalItems(){return this.myItem.reduce(function(prev, current) {return prev + current.stock;},0)}*/
-  /**totalItems(){return this.myItem.reduce((prev, current) => prev + current.stock, 0)} */
+  totalItems() {
+    return this.myItem ? this.myItem.reduce((prev, current) => prev + current.stock, 0) : 0;
+  }
+
   isSelected(id) {
     this.myItem.forEach(element => {
       if (element.id === id) {
@@ -57,6 +65,5 @@ export class ItemListComponent implements OnInit {
   showKey(event) {
 
   }
-
 
 }
