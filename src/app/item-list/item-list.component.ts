@@ -43,6 +43,10 @@ export class ItemListComponent implements OnInit {
       }
     });
   }
+
+  isEditable(id) {
+
+  }
   addQuantity(item: Item) {
     if (item.stock > 0 ) {
       item.quantity++;
@@ -64,6 +68,10 @@ export class ItemListComponent implements OnInit {
   }
   showKey(event) {
 
+  }
+
+  updateItem(item: Item) {
+    this.itemListService.updateItem(item).subscribe();
   }
 
 }

@@ -3,12 +3,13 @@
     {
       "id": 1,
       "name": "Rosa",
-      "description": "These item is the best one",
+      "description": "Perfect Rose",
       "price": 12.3,
       "stock": 5,
       "image": "../assets/rosa.jpg",
-      "selected": false,
-      "quantity": 0
+      "selected": true,
+      "quantity": 0,
+      "editable": false
     },
     {
       "id": 2,
@@ -18,7 +19,8 @@
       "stock": 3,
       "image": "../assets/lirio.jpg",
       "selected": false,
-      "quantity": 0
+      "quantity": 0,
+      "editable": false
     },
     {
       "id": 3,
@@ -28,7 +30,8 @@
       "stock": 0,
       "image": "../assets/dalia.jpg",
       "selected": false,
-      "quantity": 0
+      "quantity": 0,
+      "editable": false
     }
   ]
 }

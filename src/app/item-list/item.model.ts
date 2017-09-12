@@ -7,4 +7,5 @@ export class Item {
     image: string;
     selected: boolean;
     quantity: number;
+    editable: boolean;
 }

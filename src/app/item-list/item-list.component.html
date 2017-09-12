@@ -7,7 +7,10 @@
   <li *ngFor="let item of myItem | search:'name':busqueda" [class.selected]="item.selected" (click)="isSelected(item.id)">
     <img [src] = "item.image"/>
     <h2>{{item.name|uppercase}}</h2>
-    <p>{{item.description}}</p>
+    <p *ngIf="">{{item.description}}</p>
+      <input type="text" class="form-control" [(ngModel)]="item.description" (blur)="updateItem(item)">
+      <button *ngIf="item.description" type="submit" class="btn btn-default" (click)="updateItem(item)">Cambiar</button>
+
     <p>Price: {{item.price|currency:'EUR' :true}}</p>
     <div class="panel-amount">
       <button [disabled]="item.quantity == 0" class="btn-amount" (click)="downQuantity(item)">-</button>

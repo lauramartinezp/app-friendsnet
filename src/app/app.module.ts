@@ -7,12 +7,14 @@ import { ItemListComponent } from './item-list/item-list.component';
 import { SearchPipe } from './search.pipe';
 import { ItemListService } from './item-list/item-list.service';
 import { HttpModule } from '@angular/http';
+import { OrderComponentComponent } from './order-component/order-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemListComponent,
-    SearchPipe
+    SearchPipe,
+    OrderComponentComponent
   ],
   imports: [
     BrowserModule,

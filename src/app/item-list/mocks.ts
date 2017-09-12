@@ -8,7 +8,8 @@ export const ITEMS: Item[] = [{
     'stock': 5,
     'image': '../assets/rosa.jpg',
     'selected': false,
-    'quantity': 0
+    'quantity': 0,
+    'editable': false
 },
 {
     'id': 2,
@@ -18,7 +19,8 @@ export const ITEMS: Item[] = [{
     'stock': 3,
     'image': '../assets/lirio.jpg',
     'selected': false,
-    'quantity': 0
+    'quantity': 0,
+    'editable': false
 },
 {
     'id': 3,
@@ -28,5 +30,6 @@ export const ITEMS: Item[] = [{
     'stock': 0,
     'image': '../assets/dalia.jpg',
     'selected': false,
-    'quantity': 0
+    'quantity': 0,
+    'editable': false
 }];
