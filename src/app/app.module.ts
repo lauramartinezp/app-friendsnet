@@ -8,13 +8,17 @@ import { SearchPipe } from './search.pipe';
 import { ItemListService } from './item-list/item-list.service';
 import { HttpModule } from '@angular/http';
 import { OrderComponentComponent } from './order-component/order-component.component';
+import { CartComponent } from './cart/cart.component';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemListComponent,
     SearchPipe,
-    OrderComponentComponent
+    OrderComponentComponent,
+    CartComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
