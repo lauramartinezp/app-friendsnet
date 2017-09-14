@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ItemListComponent } from './item-list/item-list.component';
@@ -9,6 +9,15 @@ import { ItemListService } from './item-list/item-list.service';
 import { HttpModule } from '@angular/http';
 import { CartComponent } from './cart/cart.component';
 import { OrderComponent } from './order/order.component';
+import { FormComponent } from './form/form.component';
+import { RouterModule, Routes } from '@angular/router';
+import { CartService } from './cart/cart.service';
+
+const appRoutes: Routes = [
+  { path: 'order', component: OrderComponent },
+  { path: 'item-list', component: ItemListComponent  },
+  { path: '', component: ItemListComponent }
+];
 
 @NgModule({
   declarations: [
@@ -16,14 +25,17 @@ import { OrderComponent } from './order/order.component';
     ItemListComponent,
     SearchPipe,
     CartComponent,
-    OrderComponent
+    OrderComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [ItemListService],
+  providers: [ItemListService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

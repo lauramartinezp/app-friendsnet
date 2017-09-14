@@ -20,7 +20,7 @@
     <p *ngIf="item.stock > 0">{{item.stock}} in Stock</p>
     <p *ngIf="item.stock === 0" class="out">Out of Stock</p>
   
-
+    <button type="submit" class="btn btn-default" (click)="addItemToCart(item)">Añadir</button>
   </li>
 </ul>
 </div>

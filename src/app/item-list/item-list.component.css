@@ -7,7 +7,7 @@
 li {
     list-style: none;
     background-color: rgb(195, 232, 234);
-    padding:  45px;
+    padding: 45px;
     margin: 30px;
     border: 1px solid black;
     float: left;
@@ -33,18 +33,14 @@ li.selected {
     -webkit-appearance: none;
 }
 
-:disabled{
+:disabled {
     background-color: white;
 }
 
-.amount{
-    text-align: center;  
+.amount {
+    text-align: center;
 }
 
-.buscar{
-    padding: auto;
-
-}
-button:disabled{
+button:disabled {
     visibility: hidden;
 }

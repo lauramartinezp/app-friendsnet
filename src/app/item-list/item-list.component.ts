@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Item } from './item.model';
 import { ITEMS } from './mocks';
 import { ItemListService } from './item-list.service';
+import { Cart } from '../cart/cart.model';
+import { CartService } from '../cart/cart.service';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-item-list',
@@ -14,25 +17,23 @@ export class ItemListComponent implements OnInit {
   myItem: Item[];
   busqueda: string;
 
-  constructor(private itemListService: ItemListService) { }
+  constructor(private itemListService: ItemListService, private cartService: CartService) { }
 
   ngOnInit() {
     this.itemListService.getItemList().subscribe(myItem => this.myItem = myItem);
     // this.myItem = ITEMS;
   }
 
- /** totalItems() {
-    let total = 0;
-    // tslint:disable-next-line:prefer-const
-    for (let cada of this.myItem) {
-      total = cada.stock + total;
-    }
-    return total;
-  }*/
-    /**totalItems(){return this.myItem.reduce(function(prev, current) {return prev + current.stock;},0)}*/
-  totalItems() {
-    return this.myItem ? this.myItem.reduce((prev, current) => prev + current.stock, 0) : 0;
-  }
+  /** totalItems() {
+     let total = 0;
+     // tslint:disable-next-line:prefer-const
+     for (let cada of this.myItem) {
+       total = cada.stock + total;
+     }
+     return total;
+   }*/
+  /**totalItems(){return this.myItem.reduce(function(prev, current) {return prev + current.stock;},0)}*/
+
 
   isSelected(id) {
     this.myItem.forEach(element => {
@@ -44,11 +45,15 @@ export class ItemListComponent implements OnInit {
     });
   }
 
+  totalItems() {
+    return this.myItem ? this.myItem.reduce((prev, current) => prev + current.stock, 0) : 0;
+  }
+
   isEditable(id) {
 
   }
   addQuantity(item: Item) {
-    if (item.stock > 0 ) {
+    if (item.stock > 0) {
       item.quantity++;
       item.stock--;
     }
@@ -74,4 +79,11 @@ export class ItemListComponent implements OnInit {
     this.itemListService.updateItem(item).subscribe();
   }
 
+  addItemToCart(item: Item) {
+    this.cartService.addItem(item);
+    console.log(this.cartService);
+  }
+
+
 }
+

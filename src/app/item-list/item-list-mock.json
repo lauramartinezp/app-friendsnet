@@ -3,12 +3,12 @@
     {
       "id": 1,
       "name": "Rosa",
-      "description": "Perfect Rose",
+      "description": "Perfect",
       "price": 12.3,
-      "stock": 5,
+      "stock": 3,
       "image": "../assets/rosa.jpg",
       "selected": true,
-      "quantity": 0,
+      "quantity": 2,
       "editable": false
     },
     {

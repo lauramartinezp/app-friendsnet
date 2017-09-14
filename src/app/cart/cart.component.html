@@ -1,3 +1,12 @@
-<p>
-  cart works!
-</p>
+<div>
+  <h1>Carrito</h1>
+
+  <div *ngFor="let myItem of cartService.cart.items">
+    <p><b>Name:</b> {{myItem.name}}</p>
+    <p><b>ID:</b> {{myItem.id}}</p>
+    <p><b>Quantity:</b> {{myItem.quantity}}</p>
+    <p><b>Price Unitary:</b>{{myItem.price}}</p>
+    <p><b>Price:</b>{{totalPrice(myItem)}}</p>
+    <br>
+  </div>
+</div>
